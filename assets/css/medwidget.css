@@ -1,0 +1,109 @@
+.med-box-widget {
+    border: none;
+    position: relative;
+}
+
+.med-box {
+    position: relative;
+    border-radius: 10px;
+    background: #202940;
+    border-top: 3px solid #202940;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.med-widget-user .med-widget-user-header {
+    padding: 10px;
+    height: 80px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.bg-pool {
+    background-color: #37bde2 !important;
+}
+
+.med-widget-user .med-widget-user-username {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    color:#fff;
+}
+.med-widget-user .med-widget-user-desc {
+    margin-top: 0;
+    color:#fff;
+}
+
+.med-widget-user .med-widget-user-image {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    margin-left: -35px;
+}
+
+.med-widget-user .med-widget-user-image>img {
+    width: 70px;
+    height: auto;
+    border: 2px solid #202940;
+}
+
+.med-widget-user .med-box-footer {
+    padding-top: 30px;
+}
+
+.med-box-footer {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top: 1px solid #202940;
+    padding: 10px;
+    background-color: #202940;
+}
+
+.med-box .med-border-right {
+    border-right: 1px solid #f4f4f4;
+}
+
+.med-description-block {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.med-description-block>.med-description-header {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 13px;
+    color:#fff;
+}
+
+.med-description-block>.med-description-text {
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.bg-kennedy-gradient {
+  background-color: #3BB78F !important;
+  background: -webkit-linear-gradient(legacy-direction(315deg), #3BB78F 0%, #0BAB64 74%) !important;
+  background-image: linear-gradient(315deg, #3BB78F 0%, #0BAB64 74%) !important;
+}
+
+.btn-kennedy {
+  background: #3BB78F !important;
+  border-color: #0BAB64 !important;
+}
+
+.btn-kennedy:hover, .btn-kennedy:focus, .btn-kennedy:disabled {
+  background: #3BB78F !important;
+  border-color: #FFFFFF !important;
+}
+
+.bg-night {
+  background-color: #2b4162;
+  background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
+}

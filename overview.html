@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>ETC-SOLO.COM</title>
+  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon"/>
+
+  <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+  <script>
+	 WebFont.load({
+		 google: {"families":["Lato:300,400,700,900"]},
+		 custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+		 active: function() {
+			 sessionStorage.fonts = true;
+		 }
+	 });
+  </script>
+
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/bootstrap-toogle.js"></script>
+  <script src="assets/js/plugin/datatables/datatables.min.js"></script>
+  <script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <script src="assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+  <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="assets/js/chartist.js"></script>
+  <script src="assets/js/alphaxcore.min.js"></script>
+  <script src="assets/js/alphaxcore.js"></script>
+
+  <link rel="stylesheet" href="assets/css/chartist.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-toggle.css">  
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/alphaxcore.min.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/navlinks.css">
+</head>
+
+<body data-background-color="dark" onhashchange="loadOverview()">
+
+<!-- WRAPPER START -->
+<div class="wrapper">
+
+<!-- MAIN INDEX START -->
+<div class="main-overview" style="display:none;" >
+
+<!-- INDEX MAIN HEADER START -->
+<div class="main-header">
+	<div class="logo-header" data-background-color="dark">		
+		<a href="#" class="logo">
+		<img src="./coinlogo/etc.png" class="navbar-brand">
+		</a>
+		<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+		<div class="nav-toggle">
+		</div>
+	</div>
+	<nav class="navbar navbar-header navbar-expand-lg" data-background-color="dark">				
+		<div class="container-fluid">
+			<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+					<i class="fab fa-discord text-icons"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+					<i class="fab fa-telegram text-icons"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+					<i class="fab fa-twitter text-icons"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+					<i class="fas fa-envelope text-icons"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+					<i class="fas fa-list-ul text-icons"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>
+<!-- INDEX MAIN HEADER END-->
+
+<!-- IDEX HOME PAGE START -->
+<div class="page-overview">
+<div class="home-panel">
+	<div class="content">
+		<div class="col-md-12">
+				<div class="card card-round">
+					<div class="card-header">
+					<div class="card-title"><center><b>Pools Stats Overview</b></center></div>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+                    					<table class="table table-head-bg-info table-hover text-nowrap text-center">
+                      					<thead class="text-primary">
+							<tr>
+							<th>Coin Logo</th>
+                            				<th>Coin Name</th>
+                            				<th>Coin Ticker</th>
+                            				<th>Miners</th>
+                           				<th>Hashrate</th>
+                            				<th>Blockheight</th>
+                            				<th>Paid Out</th>
+							<th>Connect</th>
+                       					</tr>
+				  			</thead>
+                      					<tbody id="pool-overview"></tbody>
+                    					</table>
+                 				</div>
+                			</div>
+              			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container-fluid">
+			<div class="copyright pull-left">ETC-SOLO.COM</div>
+			<div class="copyright ml-auto pull-right">&copy; 2021 MADE WITH <i class="fa fa-heart heart text-danger"></i> BY <a href="https://github.com/MiningCryptoLive/pool-ui.git">MCL</a></div>
+		</div>
+	</footer>
+</div>
+</div>
+<!-- INDEX HOME PAGE END -->
+
+</div>
+<!-- MAIN INDEX END -->
+
+</div>
+<!-- WRAPPER END -->
+
+<!-- Web UI JS START -->
+<script type="text/javascript">
+	$(document).ready(function() {
+	loadOverview();
+	});
+</script>
+<!-- Web UI JS END-->
+
+</body>
+</html>

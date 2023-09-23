@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>SOLOPOOL.PRO | High Performance Solo Mining Pool</title>
+  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+  <link rel="icon" href="./coinlogo/etc.png" type="image/x-icon"/>
+
+  <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+  <script>
+	 WebFont.load({
+		 google: {"families":["Lato:300,400,700,900"]},
+		 custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+		 active: function() {
+			 sessionStorage.fonts = true;
+		 }
+	 });
+  </script>
+
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/bootstrap-toogle.js"></script>
+  <script src="assets/js/plugin/datatables/datatables.min.js"></script>
+  <script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <script src="assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+  <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="assets/js/chartist.js"></script>
+  <script src="assets/js/alphaxcore.min.js"></script>
+  <script src="assets/js/alphaxcore.js"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/chartist.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-toggle.css">  
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/alphaxcore.min.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/navlinks.css">
+  <link rel="stylesheet" href="assets/css/medwidget.css">
+</head>
+
+<body data-background-color="dark" onhashchange="loadIndex()">
+
+<!-- Sidebar Template -->	
+<div class="sidebar-template" style="display:none;">
+	<div class="user">
+		<div class="avatar-sm float-left mr-2"></div>
+		<div class="avatar-sm float-left mr-2 text-nowrap"><h5>{{ coinName }}</h5></div>
+		<div class="clearfix"></div>
+	</div>
+	<ul class="nav nav-primary">
+		<li class="nav-home active">
+			<a href="#">
+			<i class="fas fa-home text-success"></i>
+			<p>Home</p>
+			</a>
+		</li>
+		<li class="nav-section">
+			<span class="sidebar-mini-icon">
+			<i class="fas fa-ellipsis-h"></i>
+			</span>
+			<h4 class="text-section">Pool Section</h4>
+		</li>
+		<li class="nav-stats">
+			<a href="#{{ coinId }}/stats">
+			<i class="far fa-chart-bar text-icons"></i>
+			<p>Statistics</p>
+			</a>
+		</li>
+		<li class="nav-dashboard">
+			<a href="#{{ coinId }}/dashboard">
+			<i class="fas fa-tachometer-alt text-icons"></i>
+			<p>Dashboard</p>
+			</a>
+		</li>
+		<li class="nav-miners">
+			<a href="#{{ coinId }}/miners">
+			<i class="fas fa-users text-icons"></i>
+			<p>Miners</p>
+			</a>
+		</li>
+		<li class="nav-blocks">
+			<a href="#{{ coinId }}/blocks">
+			<i class="fas fa-cubes text-icons"></i>
+			<p>Blocks</p>
+			</a>
+		</li>
+		<li class="nav-payments">
+			<a href="#{{ coinId }}/payments">
+			<i class="fas fa-wallet text-icons"></i>
+			<p>Payments</p>
+			</a>
+		</li>
+		<li class="nav-connect">
+			<a href="#{{ coinId }}/connect">
+			<i class="fas fa-plug text-icons"></i>
+			<p>Get Connected</p>
+			</a>
+		</li>
+		<li class="nav-support">
+			<a href="#{{ coinId }}/support">
+			<i class="fas fa-headset text-icons"></i>
+			<p>Support</p>
+			</a>
+		</li>
+		<li class="nav-faq">
+			<a href="#{{ coinId }}/faq">
+			<i class="fas fa-comment-dots text-icons"></i>
+			<p>FAQ</p>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- Sidebar Template END -->
+
+<!-- WRAPPER START -->
+<div class="wrapper">
+
+<!-- MAIN INDEX START -->
+<div class="main-index" style="display:none;" >
+
+<!-- INDEX MAIN HEADER START -->
+<div class="main-header">
+	<div class="logo-header" data-background-color="dark">		
+		<a href="#" class="logo">
+		</a>
+		<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+		<div class="nav-toggle">
+		</div>
+	</div>
+	<nav class="navbar navbar-header navbar-expand-lg" data-background-color="dark">				
+		<div class="container-fluid">
+			<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+				<li class="nav-item">
+					<a class="nav-link" href="https://discord.gg/6hQEnHse6E">
+					<i class="fab fa-discord text-icons"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://t.me/+F86OfTk8FB4yYWYx">
+					<i class="fab fa-telegram text-icons"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="mailto:celldr69@gmail.com">
+					<i class="fas fa-envelope text-icons"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>
+<!-- INDEX MAIN HEADER END-->
+
+<!-- IDEX HOME PAGE START -->
+<div class="page-index">
+<div class="home-panel">
+	<div class="content">
+		<div class="container-fluid">
+			<br>
+			<h2 class="page-title" style="color:white"><center>SOLOPOOL.PRO <br> High Performance Solo Mining Pool</center></h2>
+			<br>
+			<div class="row pool-coin-widget-big"></div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container-fluid">
+			<div class="copyright pull-left">SOLOPOOL.PRO</div>
+			<div class="copyright ml-auto pull-right">&copy; 2021 MADE WITH <i class="fa fa-heart heart text-danger"></i> BY <a href="https://github.com/MiningCryptoLive/pool-ui.git">SOLOPOOL.PRO</a></div>
+		</div>
+	</footer>
+</div>
+</div>
+<!-- INDEX HOME PAGE END -->
+
+</div>
+<!-- MAIN INDEX END -->
+
+
+<!-- MAIN POOL START -->
+<div class="main-pool" style="display:none;">
+
+<!-- POOL HEADER START -->
+<div class="main-header">
+	<div class="logo-header" data-background-color="dark">		
+		<a href="#" class="logo"><br>
+		</a>
+		<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"><i class="icon-menu"></i></span>
+		</button>
+		<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+		<div class="nav-toggle">
+		<button class="btn btn-toggle sidenav-overlay-toggler">
+		<i class="icon-menu"></i>
+		</button>
+		</div>
+	</div>
+	<nav class="navbar navbar-header navbar-expand-lg" data-background-color="dark">				
+		<div class="container-fluid">
+			<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+				<li class="nav-item">
+					<a class="nav-link" href="https://discord.gg/6hQEnHse6E">
+					<i class="fab fa-discord text-icons"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://t.me/+F86OfTk8FB4yYWYx">
+					<i class="fab fa-telegram text-icons"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="mailto:celldr69@mail.com">
+					<i class="fas fa-envelope text-icons"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>
+<!-- POOL HEADER END-->
+
+<!-- POOL SIDEBAR START -->
+<div class="sidebar sidebar-style-2" data-background-color="dark2">
+	<div class="sidebar-wrapper scrollbar scrollbar-inner">
+		<div class="sidebar-content">
+                <div class="sidebar-wrapper"></div>
+		</div>
+	</div>
+</div>
+<!-- POOL SIDEBAR END-->
+
+		
+<!-- POOL STATS PAGE START -->
+<div class="page-stats" style="display:none;">
+	<div class="main-panel">
+		<div class="content">
+				<div class="inner">
+				<div class="card-title text-center">
+				<h4 class="my-title" style="color:white">High Performance Solo Mining Pool<br> For Professional Miner's</h4>
+									</div>
+				<div class="row">
+					<div class="col-sm-6 col-md-6">
+						<div class="card card-stats card-round">
+							<div class="card-body ">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+										<i class="fa fa-cubes"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+										<p class="card-category"><b>Blockchain Height</b></p>
+										<h4 class="card-title"><div id="blockchainHeight"></div></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-6">
+						<div class="card card-stats card-round">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="fa fa-users"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category"><b>Miners Online</b></p>
+											<h4 class="card-title"><div id="poolMiners"></div></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-6 col-md-6">
+						<div class="card card-stats card-round">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="fa fa-chart-bar"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category"><b>Network Hashrate</b></p>
+											<h4 class="card-title"><div id="networkHashRate"></div></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-6">
+						<div class="card card-stats card-round">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="fa fa-chart-bar"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category"><b>Network Difficulty</b></p>
+											<h4 class="card-title"><div id="networkDifficulty"></div></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-6">
+						<div class="card card-stats card-round">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="fa fa-cube"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category"><b>Last Network Block</b></p>
+											<h4 class="card-title"><div id="lastNetworkBlock"></div></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-6">
+						<div class="card card-stats card-round">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="fa fa-cube"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category"><b>Last Pool Block</b></p>
+											<h4 class="card-title"><div id="lastPoolBlock"></div></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-6">
+						<div class="card card-stats card-round">
+							<div class="card-body ">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="fa fa-percent"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category"><b>Current Effort</b></p>
+											<h4 class="card-title"><div id="poolEffort"></div></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-6">
+						<div class="card card-stats card-round">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="fa fa-cubes"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category"><b>Blocks Found by Pool</b></p>
+											<h4 class="card-title"><div id="poolBlocks"></div></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+							<div class="card-title text-center">
+							</i>Pool Hashrate 24(HR)</div>
+							</div>
+							<div class="card-body">
+							<div class="chart-container">
+							<div class="chart" id="chartStatsHashRatePool"></div>
+							</div>
+							<div class="card-footer">
+							<div class="card-title">
+							<center><div id="poolHashRate"></div></center>
+							</div>
+							</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+							<div class="card-title text-center">
+							</i>Network Hashrate 24(HR)</div>
+							</div>
+							<div class="card-body">
+							<div class="chart-container">
+							<div class="chart" id="chartStatsHashRate"></div>
+							</div>
+							<div class="card-footer">
+							<div class="card-title">
+							<center><div id="poolHashRate"></div></center>
+							</div>
+							</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+							<div class="card-title text-center">
+							</i>Network Difficulty 24(HR)</div>
+							</div>
+							<div class="card-body">
+							<div class="chart-container">
+							<div class="chart" id="chartStatsDiff"></div>
+							</div>
+							<div class="card-footer">
+							<div class="card-title">
+							<center><div id="networkDifficulty"></div></center>
+							</div>
+							</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-6">
+						<div class="card card-stats card-round">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="fa fa-dollar-sign"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category"><b>Minimum Payout</b></p>
+											<h4 class="card-title"><div id="minimumPayment"></div></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+										<div class="col-sm-6 col-md-6">
+						<div class="card card-stats card-round">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="flaticon-database text-secondary"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category"><b>Total Paid By Pool</b></p>
+											<h4 class="card-title"><div id="totalPaid"></div></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-6">
+						<div class="card card-stats card-round">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="flaticon-database text-secondary"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category"><b>Connected Peers</b></p>
+											<h4 class="card-title"><div id="connectedPeers"></div></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-6">
+						<div class="card card-stats card-round">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="flaticon-chart-pie text-warning"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category"><b>Pool Fee</b></p>
+											<h4 class="card-title"><div id="poolFeePercent"></div></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<div class="col-sm-6 col-md-6">
+				<div class="card card-stats card-round">
+				<div class="card-body ">
+                            <h3 class="text-center" style="color:#19D63F">THIS IS A SOLO MINING POOL</h3>
+                            <ul style="color:white;">
+		<li> Miners work independently to find a block.</li>
+		<li> Block finder, receives full block reward.</li>
+		<li> Pool fees are included in the miner payment. No extra costs.</li>
+		<li> Payments are made immediately after block matures.</li>
+		<li> Pool uses <a href="https://github.com/oliverw/miningcore"> Miningcore</a>, a top rated mining pool software.</li>
+		<li> Pool uses variable difficulty on all mining ports.</li><br>
+		<li><a href="https://discord.gg/8kUEQwaPhW" class="color--primary"><i class="fab fa-discord fa-2x"></i> Join our Discord Channel</a></li>
+		</ul>
+                        </div>
+                    </div>
+                    </div>
+                     <div class="col-sm-6 col-md-6">
+				<div class="card card-stats card-round">
+				<div class="card-body "> 
+                            <h3 class="text-center" style="color:#19D63F">POOL FEATURES</h3>
+                            <ul style="color:white;">
+		<li> Miner stats with charts, shares, rewards and paid earnings.</li>
+		<li> Payout = Full block reward.
+		<li> Pool Fee is 1%</li>
+		<li> Fully compatible with <a href="https://miningrigrentals.com">Mining Rig Rentals</a>.</li>
+		<li> Fully compatible with <a href="https://nicehash.com">Nicehash</a>.</li>
+		<li> High performance servers using NVME drives and the latest Intel Procesors.</li>
+		<li> Ban Manager for miners that send spam/invalid shares.</li>
+		</ul>
+                        </div>
+                    </div>
+	</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="copyright pull-left">SOLOPOOL.PRO</div>
+				<div class="copyright ml-auto pull-right">&copy; 2021 MADE WITH <i class="fa fa-heart heart text-danger"></i> BY <a href="https://github.com/MiningCryptoLive/pool-ui.git">SOLOPOOL.PRO</a></div>
+			</div>
+		</footer>
+	</div>
+</div>
+<!-- POOL STATS PAGE END-->
+
+
+<!-- POOL DASHBOARD PAGE START -->
+<div class="page-dashboard" style="display:none;">
+	<div class="main-panel">
+		<div class="content">
+			<div class="inner">
+				<div class="my-header">
+				<h4 style="color:white">Miner's Dashboard</h4>
+								</div>
+				<div class="card">
+					<div class="card-header text-center">
+					<div class="card-title"><center><b>INPUT YOUR WALLET ADDRESS</b></center></div>
+					</div>
+					<div class="card-body">
+              					<form class="form-horizontal">
+                  					<div class="form-group row">
+                						<div class="input-group mb-8">
+								<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-wallet"></i></span>
+								</div>               															
+								<input class="form-control" type="text" id="walletAddress" placeholder="Input Your Wallet Address">
+                  						<span class="input-group-append">
+                    						<button id="load-wallet" onClick="loadWallet(this.id)" type="submit" class="btn btn-info btn-fill btn-wd">Load Your Wallet Stats</button>
+                  						</span>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="row">
+				<div class="col-sm-6 col-md-6">
+					<div class="card card-stats card-round">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-5">
+									<div class="icon-big text-center">
+										<i class="fab fa-creative-commons-share text-primary"></i>
+									</div>
+								</div>
+								<div class="col-7 col-stats">
+									<div class="numbers">
+										<p class="card-category"><b>Pending Shares</b></p>
+										<h4 class="card-title"><div id="pendingShares"></div></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6">
+					<div class="card card-stats card-round">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-5">
+									<div class="icon-big text-center">
+										<i class="fas fa-hand-holding-usd text-danger"></i>
+									</div>
+								</div>
+								<div class="col-7 col-stats">
+									<div class="numbers">
+										<p class="card-category"><b>Pending Balance</b></p>
+										<h4 class="card-title"><div id="pendingBalance"></div></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6">
+					<div class="card card-stats card-round">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-5">
+									<div class="icon-big text-center">
+										<i class="far fa-money-bill-alt text-info"></i>
+									</div>
+								</div>
+								<div class="col-7 col-stats">
+									<div class="numbers">
+										<p class="card-category"><b>Paid Balance</b></p>
+										<h4 class="card-title"><div id="paidBalance"></div></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6">
+					<div class="card card-stats card-round">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-5">
+									<div class="icon-big text-center">
+										<i class="fas fa-donate text-sunrise"></i>
+									</div>
+								</div>
+								<div class="col-7 col-stats">
+									<div class="numbers">
+										<p class="card-category"><b>Lifetime Balance</b></p>
+										<h4 class="card-title"><div id="lifetimeBalance"></div></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+						<div class="card-title">
+						<span class="stamp stamp-md bg-primary-gradient mr-3">
+						<i class="fas fa-chart-area"></i>
+						</span></i>Miner's Hash Rate</div>
+						</div>
+						<div class="card-body">
+						<div class="chart-container">
+						<div class="chart" id="chartDashboardHashRate"></div>
+						</div>
+						<div class="card-footer">
+						<div class="card-title">
+						<center><div id="minerHashRate"></div></center>
+						</div>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="card">
+					<div class="card-header">
+					<div class="card-title"><center><b>Connected Rig's</b></center></div>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-head-bg-info table-hover text-nowrap">
+                      						<thead class=" text-primary">
+								<tr>
+								<th>Index</th>
+                        					<th>Name</th>
+                        					<th>Hashrate</th>
+                        					<th>Share Rate</th>
+                        					</tr>  
+								</thead>
+                      						<tbody id="workerList"></tbody>
+                    					</table>
+						</div>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="copyright pull-left">SOLOPOOL.PRO</div>
+				<div class="copyright ml-auto pull-right">&copy; 2021 MADE WITH <i class="fa fa-heart heart text-danger"></i> BY <a href="https://github.com/AlphaX-Projects/Alphaxcore-WebUI.git">SOLOPOOL.PRO</a></div>
+			</div>
+		</footer>
+	</div>
+</div>
+<!-- POOL DASHBOARD PAGE PAGE END -->
+
+
+<!-- POOL MINERS PAGE START -->	
+<div class="page-miners" style="display:none;">
+	<div class="main-panel">
+		<div class="content">
+			<div class="inner">
+				<div class="my-header">
+				<h4 class="my-title"><span class="stamp stamp-sm bg-info mr-2"><i class="fas fa-users"></i></span>Miners</h4>
+								</div>
+				<div class="card">
+					<div class="card-header">
+					<div class="card-title"><center><b>TOP 20 MINERS</b></center></div>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-head-bg-info table-hover text-nowrap">
+                      						<thead class=" text-primary">
+								<tr>
+								<th>Address</th>
+                            					<th>Hashrate</th>
+                            					<th>Share Rate</th>
+                        					</tr>
+					  			</thead>
+                      						<tbody id="minerList"></tbody>
+                    					</table>
+              					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="copyright pull-left">SOLOPOOL.PRO</div>
+				<div class="copyright ml-auto pull-right">&copy; 2021 MADE WITH <i class="fa fa-heart heart text-danger"></i> BY <a href="https://github.com/AlphaX-Projects/Alphaxcore-WebUI.git">SOLOPOOL.PRO</a></div>
+			</div>
+		</footer>
+	</div>
+</div>
+<!-- POOL MINERS PAGE END -->
+
+
+<!-- POOL BLOCKS PAGE START -->
+<div class="page-blocks" style="display:none;">
+
+	<div class="main-panel">
+		<div class="content">
+			<div class="inner">
+				<div class="my-header">
+				<h4 class="my-title"><span class="stamp stamp-sm bg-info mr-2"><i class="fas fa-cubes"></i></span>Blocks</h4>
+								</div>
+				<div class="card">
+					<div class="card-header">
+					<div class="card-title"><center><b>LAST 50 BLOCKS MINED</b></center></div>
+					<div class="card-title"><center>Block maturation requires 100 blocks, roughly 2 hours</center></div>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+                    					<table class="table table-head-bg-info table-hover text-nowrap">
+                      					<thead class="text-primary">
+							<tr>
+							<th>Found Time</th>
+                            				<th>Finder</th>
+                            				<th>Height</th>
+                            				<th>Net Diff</th>
+                           				<th>Luck</th>
+                            				<th>Status</th>
+                            				<th>Reward</th>
+                            				<th>Confirmation</th>
+                       					</tr>
+				  			</thead>
+                      					<tbody id="blockList"></tbody>
+                    					</table>
+                 				</div>
+                			</div>
+              			</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="copyright pull-left">SOLOPOOL.PRO</div>
+				<div class="copyright ml-auto pull-right">&copy; 2021 MADE WITH <i class="fa fa-heart heart text-danger"></i> BY <a href="https://github.com/AlphaX-Projects/Alphaxcore-WebUI.git">SOLOPOOL.PRO</a></div>
+			</div>
+		</footer>
+	</div>
+</div>
+<!-- POOL BLOCKS PAGE END -->
+
+
+<!-- POOL PAYMENTS PAGE START -->
+<div class="page-payments" style="display:none;">
+	<div class="main-panel">
+		<div class="content">
+			<div class="inner">
+				<div class="my-header">
+				<h4 class="my-title"><span class="stamp stamp-sm bg-info mr-2"><i class="fas fa-wallet"></i></span>Payments</h4>
+								</div>
+				<div class="card">
+					<div class="card-header">
+					<div class="card-title"><center><b>LAST 50 PAYMENTS MADE BY POOL</b></center></div>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+                    					<table class="table table-head-bg-info table-hover text-nowrap">
+								<thead class="text-primary">
+								<tr>
+								<th>Sent</th>
+                            					<th>Address</th>
+                            					<th>Amount</th>
+                            					<th colspan="2">Confirmation</th>
+                        					</tr>
+					  			</thead>
+                      						<tbody id="paymentList"></tbody>
+                    					</table>
+                 				</div>
+                			</div>
+              			</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="copyright pull-left">SOLOPOOL.PRO</div>
+				<div class="copyright ml-auto pull-right">&copy; 2021 MADE WITH <i class="fa fa-heart heart text-danger"></i> BY <a href="https://github.com/AlphaX-Projects/Alphaxcore-WebUI.git">SOLOPOOL.PRO</a></div>
+			</div>
+		</footer>
+	</div>
+</div>
+<!-- POOL PAYMENTS PAGE END -->
+
+
+<!-- POOL CONNECT PAGE START -->
+<div class="page-connect" style="display:none;">
+	<div class="main-panel">
+		<div class="content">
+			<div class="inner">
+				<div class="my-header">
+				<h4 class="my-title"><span class="stamp stamp-sm bg-info mr-2"><i class="fas fa-plug"></i></span>Get Connected</h4>
+									</div>
+				<div class="card">
+					<div class="card-header">
+					<div class="card-title"><center><b>All You Need To Connect Your Miners</b></center></div>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+                    					<table class="table table-head-bg-info table-hover text-nowrap">
+								<thead class="text-primary">
+								<tr>
+								<th>Item</th>
+                            					<th>Value</th>
+                        					</tr>
+					  			</thead>
+                      						<tbody id="connectPoolConfig"></tbody>
+                    					</table>
+                 				</div>
+                			</div>
+              			</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="copyright pull-left">SOLOPOOL.PRO</div>
+				<div class="copyright ml-auto pull-right">&copy; 2021 MADE WITH <i class="fa fa-heart heart text-danger"></i> BY <a href="https://github.com/AlphaX-Projects/Alphaxcore-WebUI.git">SOLOPOOL.PRO</a></div>
+			</div>
+		</footer>
+	</div>
+</div>
+<!-- POOL CONNECT PAGE END -->
+
+
+<!-- POOL SUPPORT PAGE START -->
+<div class="page-support" style="display:none;">
+	<div class="main-panel">
+		<div class="content">
+			<div class="inner">
+				<div class="my-header">
+				<h4 class="my-title"><span class="stamp stamp-sm bg-info mr-2"><i class="fas fa-comment-dots"></i></span>Support</h4>
+								</div>
+				<div class="card">
+					<div class="card-header">
+					<div class="card-title"><center><b>How To Get In Contact With Us</b></center></div>
+					</div>
+					<div class="card-body table-responsive">
+					<div class="row justify-content-center align-items-center mb-5">
+						<div class="col-md-3 pl-md-0">
+							<div class="card-pricing2 card-secondary">
+								<div class="pricing-header">
+									<h3 class="fw-bold">DISCORD</h3>
+								</div>
+								<div class="price-value">
+									<div class="value">
+										<span class="amount"><i class="fab fa-discord"></i></span>
+										<span class="month">Discord Channel</span>
+									</div>
+								</div>
+								<br><br><br><br>
+								<a href="https://discord.gg/6hQEnHse6E" class="btn btn-secondary btn-border btn-lg w-75 fw-bold mb-3">JOIN DISCORD</a>
+							</div>
+						</div>
+						<div class="col-md-3 pl-md-0 pr-md-0">
+							<div class="card-pricing2 card-info">
+								<div class="pricing-header">
+									<h3 class="fw-bold">TELEGRAM</h3>
+								</div>
+								<div class="price-value">
+									<div class="value">
+										<span class="amount"><i class="fab fa-telegram"></i></span>
+										<span class="month">Telegram Channel</span>
+									</div>
+								</div>
+								<br><br><br><br>
+								<a href="https://t.me/+F86OfTk8FB4yYWYx" class="btn btn-info btn-border btn-lg w-75 fw-bold mb-3">JOIN TELEGRAM</a>
+							</div>
+						</div>
+						<div class="col-md-3 pr-md-0">
+							<div class="card-pricing2 card-success">
+								<div class="pricing-header">
+									<h3 class="fw-bold">EMAIL</h3>
+								</div>
+								<div class="price-value">
+									<div class="value">
+										<span class="amount"><i class="fas fa-envelope"></i></span>
+										<span class="month">Mail Channel</span>
+									</div>
+								</div>
+								<br><br><br><br>
+								<a href="mailto:celldr69@gmail.com" class="btn btn-success btn-border btn-lg w-75 fw-bold mb-3">MAIL US</a>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="copyright pull-left">SOLOPOOL.PRO</div>
+				<div class="copyright ml-auto pull-right">&copy; 2021 MADE WITH <i class="fa fa-heart heart text-danger"></i> BY <a href="https://github.com/AlphaX-Projects/Alphaxcore-WebUI.git">SOLOPOOL.PRO</a></div>
+			</div>
+		</footer>
+	</div>
+</div>
+<!-- POOL SUPPORT PAGE END -->
+
+
+<!-- POOL FAQ PAGE START -->
+<div class="page-faq" style="display:none;">
+	<div class="main-panel">
+		<div class="content">
+			<div class="inner">
+				<div class="my-header">
+				<h4 class="my-title"><span class="stamp stamp-sm bg-info mr-2"><i class="fas fa-comment-dots"></i></span>FAQ</h4>
+								</div>
+				<div class="card">
+					<div class="card-header">
+					<div class="card-title text-center"><b>Questions & Answers</b></div>
+					</div>
+					<div class="card-body table-responsive">
+
+                      			<h4 style="color:white">Do I need to register an account to mine?</h4>
+                      			<p style="color:white">
+                        		Registration is not required. Just configure your miner
+                        		according to our instructions and start mining. Your
+                 		       	first submitted share will automatically register you
+                 		       	with our pool. Good Luck!
+                     		 	</p>
+
+                      			<h4 style="color:white">Why is my reported hashrate zero or different from what my miner reports?</h4>
+                      			<p style="color:white">
+                        		Pool and miner hashrates are re-calculated every ten
+                        		minutes. Therefore it can take a maximum of ten minutes
+                        		for your hashrate to update depending on the submission
+                        		time of your first valid share. The hashrate we display
+                        		at the pool is a rough approximation of your hashrate
+                        		based on your submitted shares and can therefore differ
+                        		significantly from the hashrate displayed locally. When
+                        		in doubt always consider the value displayed by your
+                        		miner as the correct one.
+                      			</p>
+
+                      			<h4 style="color:white">How will I get paid?</h4>
+                      			<p style="color:white">
+                        		All of our pools utilize the SOLO payment system.                      			
+                        		Assuming a block has been found, payouts are processed
+                        		and sent every 10 minutes. This process is fully automated.
+                      			</p>
+
+                      			<h4 style="color:white">When will I get paid?</h4>
+                      			<p style="color:white">
+                        		You won't see any balance in your account until a block
+                        		has been found by a miner and after the block has
+                       		 	reached a mature status. This may take a couple hours,
+                        		depending on the coin. As soon as a block can be
+                        		considered 'mature' by the pool, your payment will be sent to you.</p>
+                      			<p style="color:white">
+                        		Trustworthiness, reliability, support and low latency
+                        		are the things you should consider when choosing a pool.
+                        		By avoiding the largest pools you contribute to the
+                        		network health by spreading the hash power.
+                      			</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="copyright pull-left">SOLOPOOL.PRO</div>
+				<div class="copyright ml-auto pull-right">&copy; 2021 MADE WITH <i class="fa fa-heart heart text-danger"></i> BY <a href="https://github.com/AlphaX-Projects/Alphaxcore-WebUI.git">SOLOPOOL.PRO</a></div>
+			</div>
+		</footer>
+	</div>
+</div>
+<!-- POOL FAQ PAGE END -->
+
+
+</div>
+<!-- MAIN POOL END -->		
+
+</div>
+<!-- WRAPPER END -->
+
+<!-- Web UI JS START -->
+<script type="text/javascript">
+	$(document).ready(function() {
+	loadIndex();
+	});
+</script>
+<!-- Web UI JS END-->
+
+</body>
+</html>
