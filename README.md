@@ -1,9 +1,9 @@
-### Alphaxcore WebUI V1.2.0
+### WebUI V1.2.0
 
 ### Donations
 
 You can send donations directly to the following accounts:
 
-* LTC:  `LWBZWLmjqeQFnMqS9NctcdSx3TEYHyzfGz`
+* ETC:  `0xd26bd791dEb5C445bA51Adb84e17D879a3496603`
 
-![AlphaxCore](https://github.com/AlphaX-Projects/alphaxcore-WebUI/blob/master/webui.png)
+![WEB-UI](https://github.com/MiningCryptoLive/pool-ui2/webui.png)
