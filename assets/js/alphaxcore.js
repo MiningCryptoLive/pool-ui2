@@ -354,8 +354,8 @@ function loadWidgetMediumPage() {
 		poolCoinWidgetMediumTemplate += "<div class='col-md-12'>";
 		poolCoinWidgetMediumTemplate += "<div class='med-box med-box-widget med-widget-user'>";
 		poolCoinWidgetMediumTemplate += "<div class='med-widget-user-header bg-night'>";
-		poolCoinWidgetMediumTemplate += "<button class='btn btn-outline-success btn-round btn-md float-center'><a href='#" + value.id.toLowerCase() + "'<span class='btn-label'>GO MINE&nbsp;&nbsp;<img src='coinlogo/" + value.coin.type.toLowerCase() + ".png' height='20' width='20'></span></a></button>";
-		poolCoinWidgetMediumTemplate += "<h3 class='med-widget-user-username'>" + coinName + "</h3>";
+		poolCoinWidgetMediumTemplate += "<button class='btn btn-outline-success btn-round btn-md float-right'><a href='#" + value.id.toLowerCase() + "'<span class='btn-label'>GO MINE&nbsp;&nbsp;<img src='coinlogo/" + value.coin.type.toLowerCase() + ".png' height='20' width='20'></span></a></button>";
+		poolCoinWidgetMediumTemplate += "<h4 class='med-widget-user-username'>" + coinName + "</h4>";
                 poolCoinWidgetMediumTemplate += "</div>";
 		poolCoinWidgetMediumTemplate += "<div class='med-box-footer'>";
 		poolCoinWidgetMediumTemplate += "<div class='row'>";
@@ -392,7 +392,7 @@ function loadWidgetMediumPage() {
 		poolCoinWidgetMediumTemplate += "<div class='col-sm-4 med-border-right'>";
 		poolCoinWidgetMediumTemplate += "<div class='med-description-block'>";
 		poolCoinWidgetMediumTemplate += "<h5 class='med-description-header'>" + value.networkStats.blockHeight + "</h5>";
-		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Height</span>";
+		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Blockchain Height</span>";
                 poolCoinWidgetMediumTemplate += "</div>";
                 poolCoinWidgetMediumTemplate += "</div>";
 		poolCoinWidgetMediumTemplate += "<div class='col-sm-4 med-border-right'>";
