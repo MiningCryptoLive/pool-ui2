@@ -371,7 +371,7 @@ function loadWidgetMediumPage() {
 		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Payout</span>";
                 poolCoinWidgetMediumTemplate += "</div>";
                 poolCoinWidgetMediumTemplate += "</div>";
-		poolCoinWidgetMediumTemplate += "<div class='col-sm-4'>";
+		poolCoinWidgetMediumTemplate += "<div class='col-sm-4 med-border-right'>";
 		poolCoinWidgetMediumTemplate += "<div class='med-description-block'>";
 		poolCoinWidgetMediumTemplate += "<h5 class='med-description-header'>" + value.poolFeePercent + " %</h5>";
 		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Pool Fee</span>";
