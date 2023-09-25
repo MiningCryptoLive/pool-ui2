@@ -359,13 +359,13 @@ function loadWidgetMediumPage() {
                 poolCoinWidgetMediumTemplate += "</div>";
 		poolCoinWidgetMediumTemplate += "<div class='med-box-footer'>";
 		poolCoinWidgetMediumTemplate += "<div class='row'>";
-		poolCoinWidgetMediumTemplate += "<div class='col-sm-4'>";
+		poolCoinWidgetMediumTemplate += "<div class='col-md-6'>";
 		poolCoinWidgetMediumTemplate += "<div class='med-description-block'>";
 		poolCoinWidgetMediumTemplate += "<h4 class='med-description-header'>" + (value.poolEffort * 100).toFixed(2) + " %</h4>";
 		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Pool Effort</span>";
                 poolCoinWidgetMediumTemplate += "</div>";
                 poolCoinWidgetMediumTemplate += "</div>";
-		poolCoinWidgetMediumTemplate += "<div class='col-sm-4'>";
+		poolCoinWidgetMediumTemplate += "<div class='col-md-6'>";
 		poolCoinWidgetMediumTemplate += "<div class='med-description-block'>";
 		poolCoinWidgetMediumTemplate += "<h5 class='med-description-header'>" + value.paymentProcessing.payoutScheme + "</h5>";
 		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Payout</span>";
