@@ -70,14 +70,14 @@
 
 .med-description-block {
     display: block;
-    margin: 10px 0;
+    margin: 5px 0;
     text-align: center;
 }
 
 .med-description-block>.med-description-header {
     margin: 0;
     padding: 0;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 18px;
     color:#fff;
 }
