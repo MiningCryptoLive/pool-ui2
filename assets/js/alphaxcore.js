@@ -355,7 +355,7 @@ function loadWidgetMediumPage() {
 		poolCoinWidgetMediumTemplate += "<div class='med-box med-box-widget med-widget-user'>";
 		poolCoinWidgetMediumTemplate += "<div class='med-widget-user-header bg-night'>";
 		poolCoinWidgetMediumTemplate += "<button class='btn btn-outline-success btn-round btn-md float-right'><a href='#" + value.id.toLowerCase() + "'<span class='btn-label'>GO MINE&nbsp;&nbsp;<img src='coinlogo/" + value.coin.type.toLowerCase() + ".png' height='20' width='20'></span></a></button>";
-		<div></div>
+		poolCoinWidgetMediumTemplate += "<div> </div>";
 		poolCoinWidgetMediumTemplate += "<h4 class='med-widget-user-username'>" + coinName + "</h4>";
                 poolCoinWidgetMediumTemplate += "</div>";
 		poolCoinWidgetMediumTemplate += "<div class='med-box-footer'>";
