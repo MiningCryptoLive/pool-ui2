@@ -1,5 +1,11 @@
 ### WebUI V1.2.0
 
+cd /assets/js and modify alphaxcore.js
+
+var WebURL = "https://your.domain.com/";
+var API = "https://your.domain.com/api/";
+var stratumAddress = "stratum+tcp://your.domain.com";
+
 ### Donations
 
 You can send donations directly to the following accounts:
@@ -8,8 +14,4 @@ You can send donations directly to the following accounts:
 
 ![WEB-UI](https://github.com/MiningCryptoLive/pool-ui2/blob/main/webui.png)
 
-cd /assets/js and modify alphaxcore.js
 
-var WebURL = "https://your.domain.com/";
-var API = "https://your.domain.com/api/";
-var stratumAddress = "stratum+tcp://your.domain.com";
