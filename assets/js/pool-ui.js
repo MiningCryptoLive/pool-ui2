@@ -1,5 +1,5 @@
 /*!
-  * Alphaxcore.js v1.2.0
+  * Copyright 2023 MiningCryptoLive
   * Copyright 2020 Authors MinerNL
   * Copyright 2021 Authors AlphaX Projects
 */
