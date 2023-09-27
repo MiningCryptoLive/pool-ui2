@@ -885,7 +885,6 @@ function loadConnectPage() {
 		coinType = value.coin.type.toLowerCase();
 		algorithm = value.coin.algorithm;
 			connectPoolConfig += "<tr><td>Crypto Coin Name</td><td>" + coinName + " (" + value.coin.type + ") </td></tr>";
-			connectPoolConfig += "<tr><td>Coin Algorithm</td><td>" + value.coin.algorithm + "</td></tr>";
 			connectPoolConfig += "<tr><td>Coin Reward Type</td><td>" + value.networkStats.rewardType + "</td></tr>";
 			connectPoolConfig += '<tr><td>Pool Wallet</td><td><a href="' + value.addressInfoLink + '" target="_blank">' + value.address.substring(0, 12) + " &hellip; " + value.address.substring(value.address.length - 12) + "</a></td></tr>";
 			connectPoolConfig += "<tr><td>Payout Scheme</td><td>" + value.paymentProcessing.payoutScheme + "</td></tr>";
