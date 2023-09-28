@@ -413,7 +413,12 @@ function loadWidgetMediumPage() {
 		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Total Paid</span>";
                 poolCoinWidgetMediumTemplate += "</div>";
                 poolCoinWidgetMediumTemplate += "</div>";
-
+		poolCoinWidgetMediumTemplate += "<div class='col-sm-4'>";
+		poolCoinWidgetMediumTemplate += "<div class='med-description-block'>";
+		poolCoinWidgetMediumTemplate += "<h5 class='med-description-header'>" + value.poolStats.connectedMiners + "</h5>";
+		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Pool Miner's</span>";
+                poolCoinWidgetMediumTemplate += "</div>";
+                poolCoinWidgetMediumTemplate += "</div>";
 			poolCoinWidgetMediumTemplate += "</div>";
                 poolCoinWidgetMediumTemplate += "</div>";
                 poolCoinWidgetMediumTemplate += "</div>";
