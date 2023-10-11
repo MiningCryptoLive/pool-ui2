@@ -1,5 +1,5 @@
 /*!
-  * Copyright 2023 MiningCryptoLive
+  * Alphaxcore.js v1.2.0
   * Copyright 2020 Authors MinerNL
   * Copyright 2021 Authors AlphaX Projects
 */
@@ -8,7 +8,7 @@ var WebURL         = "https://solopool.pro/";
 var API            = "https://solopool.pro/api/";
 var stratumAddress = "stratum+tcp://solopool.pro";
 
-currentPage = "stats";
+currentPage = "index";
 
 console.log('MiningCore.WebUI : ', WebURL);		                      // Returns website URL
 console.log('API address used : ', API);                                      // Returns API URL
@@ -242,7 +242,7 @@ function loadIndex() {
       	default:
 	}
 	} else {
-	loadWidgetMediumPage(); // Change to Big Medium Small
+	loadWidgetBigPage(); // Change to Big Medium Small
 	}
 	scrollPageTop();
 }
@@ -269,8 +269,8 @@ function loadWidgetBigPage() {
         var coinLogo = "<img class='coinimg' src='coinlogo/" + value.coin.type.toLowerCase() + ".png'>";
 		var coinName = value.coin.name;
 		if (typeof coinName === "undefined" || coinName === null) {coinName = value.coin.type;}        		
-		poolCoinWidgetBigTemplate += "<div class='col-md-12'>";
-		poolCoinWidgetBigTemplate += "<div class='card card-dark card-pricing'>";
+		poolCoinWidgetBigTemplate += "<div class='col-md-12 pl-md-0'>";
+		poolCoinWidgetBigTemplate += "<div class='card card-pricing card-price'>";
 		poolCoinWidgetBigTemplate += "<div class='card card-header bg-dark'>";
 		poolCoinWidgetBigTemplate += "<div class='profile-picture'>";
 		poolCoinWidgetBigTemplate += "<div class='avatar avatar-xl'>";
@@ -279,50 +279,94 @@ function loadWidgetBigPage() {
                 poolCoinWidgetBigTemplate += "</div>";
                 poolCoinWidgetBigTemplate += "</div>";
 		poolCoinWidgetBigTemplate += "<div class='card-body'>";
-		poolCoinWidgetBigTemplate += "<ul class='specification-list'>";
-		poolCoinWidgetBigTemplate += "<li>";
-		poolCoinWidgetBigTemplate += "<span class='name-specification'>Name</span>";
-		poolCoinWidgetBigTemplate += "<span class='status-specification'>" + coinName + "</span>";
-		poolCoinWidgetBigTemplate += "</li>";
-		poolCoinWidgetBigTemplate += "<li>";
-		poolCoinWidgetBigTemplate += "<span class='name-specification'>Effort</span>"; 
-		poolCoinWidgetBigTemplate += "<span class='status-specification'>" + (value.poolEffort * 100).toFixed(2) + " %</span>";
-		poolCoinWidgetBigTemplate += "</li>";
-		poolCoinWidgetBigTemplate += "<li>";
-		poolCoinWidgetBigTemplate += "<span class='name-specification'>Payout</span>"; 
-		poolCoinWidgetBigTemplate += "<span class='status-specification'>" + value.paymentProcessing.payoutScheme + "</span>";
-		poolCoinWidgetBigTemplate += "</li>";
-		poolCoinWidgetBigTemplate += "<li>";
-		poolCoinWidgetBigTemplate += "<span class='name-specification'>Pool Fee</span>";
-		poolCoinWidgetBigTemplate += "<span class='status-specification'>" + value.poolFeePercent + " %</span>";
-		poolCoinWidgetBigTemplate += "</li>";
-		poolCoinWidgetBigTemplate += "<li>";
-		poolCoinWidgetBigTemplate += "<span class='name-specification'>Chain Height</span>";
-		poolCoinWidgetBigTemplate += "<span class='status-specification'>" + value.networkStats.blockHeight + " </span>";
-		poolCoinWidgetBigTemplate += "</li>";
-		poolCoinWidgetBigTemplate += "<li>";
-		poolCoinWidgetBigTemplate += "<span class='name-specification'>Network Hashrate</span>";
-		poolCoinWidgetBigTemplate += "<span class='status-specification'>" + _formatter(value.networkStats.networkHashrate, 3, "H/s") + " </span>";
-		poolCoinWidgetBigTemplate += "</li>";
-		poolCoinWidgetBigTemplate += "<li>";
-		poolCoinWidgetBigTemplate += "<span class='name-specification'>Network Diff</span>";
-		poolCoinWidgetBigTemplate += "<span class='status-specification'>" + _formatter(value.networkStats.networkDifficulty, 3, "H/s") + " </span>";
-		poolCoinWidgetBigTemplate += "</li>";
-		poolCoinWidgetBigTemplate += "<li>";
-		poolCoinWidgetBigTemplate += "<span class='name-specification'>Pool Hashrate</span>";
-		poolCoinWidgetBigTemplate += "<span class='status-specification'>" + _formatter(value.poolStats.poolHashrate, 3, "H/s") + " </span>";
-		poolCoinWidgetBigTemplate += "</li>";
-		poolCoinWidgetBigTemplate += "<li>";
-		poolCoinWidgetBigTemplate += "<span class='name-specification'>Pool Miner's</span>";
-		poolCoinWidgetBigTemplate += "<span class='status-specification'>" + value.poolStats.connectedMiners + " </span>";
-		poolCoinWidgetBigTemplate += "</li>";
-		poolCoinWidgetBigTemplate += "</ul>";
-		poolCoinWidgetBigTemplate += "</div>";
-		poolCoinWidgetBigTemplate += "<div class='card-footer'>";
-		poolCoinWidgetBigTemplate += "<button class='btn btn-primary btn-block'><a href='#" + value.id.toLowerCase() + "'<span><h3> GO MINE -> " + coinName + " </h3></span></a></button>";
-		poolCoinWidgetBigTemplate += "</div>";
-		poolCoinWidgetBigTemplate += "</div>";
-		poolCoinWidgetBigTemplate += "</div>";
+
+           poolCoinWidgetBigTemplate += "<ul class='specification-list'>";
+
+           poolCoinWidgetBigTemplate += "<li>";
+
+           poolCoinWidgetBigTemplate += "<span class='name-specification'>Name</span>";
+
+           poolCoinWidgetBigTemplate += "<span class='status-specification'>" + coinName + "</span>";
+
+           poolCoinWidgetBigTemplate += "</li>";
+
+           poolCoinWidgetBigTemplate += "<li>";
+
+           poolCoinWidgetBigTemplate += "<span class='name-specification'>Effort</span>";
+
+           poolCoinWidgetBigTemplate += "<span class='status-specification'>" + (value.poolEffort * 100).toFixed(2) + " %</span>";
+
+           poolCoinWidgetBigTemplate += "</li>";
+
+           poolCoinWidgetBigTemplate += "<li>";
+
+           poolCoinWidgetBigTemplate += "<span class='name-specification'>Payout</span>";
+
+           poolCoinWidgetBigTemplate += "<span class='status-specification'>" + value.paymentProcessing.payoutScheme + "</span>";
+
+           poolCoinWidgetBigTemplate += "</li>";
+
+           poolCoinWidgetBigTemplate += "<li>";
+
+           poolCoinWidgetBigTemplate += "<span class='name-specification'>Pool Fee</span>";
+
+           poolCoinWidgetBigTemplate += "<span class='status-specification'>" + value.poolFeePercent + " %</span>";
+
+           poolCoinWidgetBigTemplate += "</li>";
+
+           poolCoinWidgetBigTemplate += "<li>";
+
+           poolCoinWidgetBigTemplate += "<span class='name-specification'>Height</span>";
+
+           poolCoinWidgetBigTemplate += "<span class='status-specification'>" + value.networkStats.blockHeight + " </span>";
+
+           poolCoinWidgetBigTemplate += "</li>";
+
+           poolCoinWidgetBigTemplate += "<li>";
+
+           poolCoinWidgetBigTemplate += "<span class='name-specification'>Pool Blocks</span>";
+
+           poolCoinWidgetBigTemplate += "<span class='status-specification'>" + value.totalBlocks + " </span>";
+
+           poolCoinWidgetBigTemplate += "</li>";
+
+           poolCoinWidgetBigTemplate += "<li>";
+
+           poolCoinWidgetBigTemplate += "<span class='name-specification'>Total Paid</span>";
+
+           poolCoinWidgetBigTemplate += "<span class='status-specification'>" + _formatter(value.totalPaid, 2, "")  + " </span>";
+
+           poolCoinWidgetBigTemplate += "</li>";
+
+           poolCoinWidgetBigTemplate += "<li>";
+
+           poolCoinWidgetBigTemplate += "<span class='name-specification'>Pool Hashrate</span>";
+
+           poolCoinWidgetBigTemplate += "<span class='status-specification'>" + _formatter(value.poolStats.poolHashrate, 3, "H/s") + " </span>";
+
+           poolCoinWidgetBigTemplate += "</li>";
+
+           poolCoinWidgetBigTemplate += "<li>";
+
+           poolCoinWidgetBigTemplate += "<span class='name-specification'>Pool Miner's</span>";
+
+           poolCoinWidgetBigTemplate += "<span class='status-specification'>" + value.poolStats.connectedMiners + " </span>";
+
+           poolCoinWidgetBigTemplate += "</li>";
+
+           poolCoinWidgetBigTemplate += "</ul>";
+
+           poolCoinWidgetBigTemplate += "</div>";
+
+           poolCoinWidgetBigTemplate += "<div class='card-footer'>";
+
+           poolCoinWidgetBigTemplate += "<button class='btn btn-primary btn-block'><a href='#" + value.id.toLowerCase() + "'<span><h3> GO MINE -> " + coinName + " </h3></span></a></button>";
+
+           poolCoinWidgetBigTemplate += "</div>";
+
+           poolCoinWidgetBigTemplate += "</div>";
+
+           poolCoinWidgetBigTemplate += "</div>";
 	});
 	$(".pool-coin-widget-big").html(poolCoinWidgetBigTemplate);
 	})
@@ -351,21 +395,24 @@ function loadWidgetMediumPage() {
         var coinLogo = "<img class='coinimg' src='coinlogo/" + value.coin.type.toLowerCase() + ".png'>";
 		var coinName = value.coin.name;
 		if (typeof coinName === "undefined" || coinName === null) {coinName = value.coin.type;}        		
-		poolCoinWidgetMediumTemplate += "<div class='col-md-12'>";
+		poolCoinWidgetMediumTemplate += "<div class='col-md-4'>";
 		poolCoinWidgetMediumTemplate += "<div class='med-box med-box-widget med-widget-user'>";
 		poolCoinWidgetMediumTemplate += "<div class='med-widget-user-header bg-night'>";
-		poolCoinWidgetMediumTemplate += "<button class='btn btn-outline-success btn-round btn-md float-right'><a href='#" + value.id.toLowerCase() + "'<span class='btn-label'>GO MINE&nbsp;&nbsp;</span></a></button>";
-		poolCoinWidgetMediumTemplate += "<h4 class='med-widget-user-username'>" + coinName + "</h4>";
+		poolCoinWidgetMediumTemplate += "<button class='btn btn-outline-success btn-round btn-sm float-right'><a href='#" + value.id.toLowerCase() + "'<span class='btn-label'>Start Mine&nbsp;&nbsp;<img src='coinlogo/" + value.coin.type.toLowerCase() + ".png' height='20' width='20'></span></a></button>";
+		poolCoinWidgetMediumTemplate += "<h3 class='med-widget-user-username'>" + coinName + "</h3>";
+                poolCoinWidgetMediumTemplate += "</div>";
+		poolCoinWidgetMediumTemplate += "<div class='med-widget-user-image'>";
+                poolCoinWidgetMediumTemplate += "<img class='avatar-img rounded-circle' src='coinlogo/" + value.coin.type.toLowerCase() + ".png'>";
                 poolCoinWidgetMediumTemplate += "</div>";
 		poolCoinWidgetMediumTemplate += "<div class='med-box-footer'>";
 		poolCoinWidgetMediumTemplate += "<div class='row'>";
-		poolCoinWidgetMediumTemplate += "<div class='col-sm-4'>";
+		poolCoinWidgetMediumTemplate += "<div class='col-sm-4 med-border-right'>";
 		poolCoinWidgetMediumTemplate += "<div class='med-description-block'>";
-		poolCoinWidgetMediumTemplate += "<h4 class='med-description-header'>" + (value.poolEffort * 100).toFixed(2) + " %</h4>";
-		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Pool Effort</span>";
+		poolCoinWidgetMediumTemplate += "<h5 class='med-description-header'>" + value.coin.algorithm + "</h5>";
+		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Algorithm</span>";
                 poolCoinWidgetMediumTemplate += "</div>";
                 poolCoinWidgetMediumTemplate += "</div>";
-		poolCoinWidgetMediumTemplate += "<div class='col-sm-4'>";
+		poolCoinWidgetMediumTemplate += "<div class='col-sm-4 med-border-right'>";
 		poolCoinWidgetMediumTemplate += "<div class='med-description-block'>";
 		poolCoinWidgetMediumTemplate += "<h5 class='med-description-header'>" + value.paymentProcessing.payoutScheme + "</h5>";
 		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Payout</span>";
@@ -376,50 +423,6 @@ function loadWidgetMediumPage() {
 		poolCoinWidgetMediumTemplate += "<h5 class='med-description-header'>" + value.poolFeePercent + " %</h5>";
 		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Pool Fee</span>";
                 poolCoinWidgetMediumTemplate += "</div>";
-                poolCoinWidgetMediumTemplate += "</div>";
-		poolCoinWidgetMediumTemplate += "<div class='col-sm-4'>";
-		poolCoinWidgetMediumTemplate += "<div class='med-description-block'>";
-		poolCoinWidgetMediumTemplate += "<h5 class='med-description-header'>" + _formatter(value.poolStats.poolHashrate, 3, "H/s") + "</h5>";
-		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Pool Hashrate</span>";
-                poolCoinWidgetMediumTemplate += "</div>";
-                poolCoinWidgetMediumTemplate += "</div>";
-		poolCoinWidgetMediumTemplate += "<div class='col-sm-4'>";
-		poolCoinWidgetMediumTemplate += "<div class='med-description-block'>";
-		poolCoinWidgetMediumTemplate += "<h5 class='med-description-header'>" + _formatter(value.networkStats.networkHashrate, 3, "H/s") + "</h5>";
-		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Network Hashrate</span>";
-                poolCoinWidgetMediumTemplate += "</div>";
-                poolCoinWidgetMediumTemplate += "</div>";
-		poolCoinWidgetMediumTemplate += "<div class='col-sm-4'>";
-		poolCoinWidgetMediumTemplate += "<div class='med-description-block'>";
-		poolCoinWidgetMediumTemplate += "<h5 class='med-description-header'>" + value.networkStats.blockHeight + "</h5>";
-		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Blockchain Height</span>";
-                poolCoinWidgetMediumTemplate += "</div>";
-                poolCoinWidgetMediumTemplate += "</div>";
-		poolCoinWidgetMediumTemplate += "<div class='col-sm-4'>";
-		poolCoinWidgetMediumTemplate += "<div class='med-description-block'>";
-		poolCoinWidgetMediumTemplate += "<h5 class='med-description-header'>" + _formatter(value.networkStats.networkDifficulty, 3, "H/s") + "</h5>";
-		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Network Difficulty</span>";
-                poolCoinWidgetMediumTemplate += "</div>";
-                poolCoinWidgetMediumTemplate += "</div>";
-		poolCoinWidgetMediumTemplate += "<div class='col-sm-4'>";
-		poolCoinWidgetMediumTemplate += "<div class='med-description-block'>";
-		poolCoinWidgetMediumTemplate += "<h5 class='med-description-header'>" + value.totalBlocks + "</h5>";
-		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Pool Blocks</span>";
-                poolCoinWidgetMediumTemplate += "</div>";
-                poolCoinWidgetMediumTemplate += "</div>";
-		poolCoinWidgetMediumTemplate += "<div class='col-sm-4'>";
-		poolCoinWidgetMediumTemplate += "<div class='med-description-block'>";
-		poolCoinWidgetMediumTemplate += "<h5 class='med-description-header'>" + _formatter(value.totalPaid, 2,"") + "</h5>";
-		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Total Paid</span>";
-                poolCoinWidgetMediumTemplate += "</div>";
-                poolCoinWidgetMediumTemplate += "</div>";
-		poolCoinWidgetMediumTemplate += "<div class='col-sm-4'>";
-		poolCoinWidgetMediumTemplate += "<div class='med-description-block'>";
-		poolCoinWidgetMediumTemplate += "<h5 class='med-description-header'>" + value.poolStats.connectedMiners + "</h5>";
-		poolCoinWidgetMediumTemplate += "<span class='med-description-text'>Pool Miner's</span>";
-                poolCoinWidgetMediumTemplate += "</div>";
-                poolCoinWidgetMediumTemplate += "</div>";
-			poolCoinWidgetMediumTemplate += "</div>";
                 poolCoinWidgetMediumTemplate += "</div>";
                 poolCoinWidgetMediumTemplate += "</div>";
 		poolCoinWidgetMediumTemplate += "</div>";
@@ -594,7 +597,7 @@ function loadStatsChart() {
 	$.each(data.stats, function(index, value) {
 	if (labels.length === 0 || (labels.length + 1) % 2 === 1) {
 		var createDate = convertLocalDateToUTCDate(new Date(value.created),false);
-		labels.push(createDate.getHours () + ":00");
+		labels.push(createDate.getHours() + ":00");
 		} else {
 		labels.push("");
 	}
@@ -607,10 +610,10 @@ function loadStatsChart() {
 	var dataNetworkHash       = {labels: labels,series: [networkHashRate]};
 	var dataNetworkDifficulty = {labels: labels,series: [networkDifficulty]};
 	var dataMiners            = {labels: labels,series: [connectedMiners]};
-	var options		  = {height: "275px",showArea: true,showPoint: false,seriesBarDistance: 1.5,axisX: {showGrid: false},
+	var options		  = {height: "200px",showArea: true,showPoint: false,seriesBarDistance: 1,axisX: {showGrid: false},
                                      axisY: {offset: 47,scale: "logcc",labelInterpolationFnc: function(value) {return _formatter(value, 1, "H/s");}},
                                      lineSmooth: Chartist.Interpolation.simple({divisor: 2})};
-	var chartMiners		  = {height: "275px",showArea: true,showPoint: false,seriesBarDistance: 1.5,axisX: {showGrid: false},
+	var chartMiners		  = {height: "200px",showArea: true,showPoint: false,seriesBarDistance: 1,axisX: {showGrid: false},
                                      axisY: {offset: 47,scale: "logcc",labelInterpolationFnc: function(value) {return _formatter(value, 1, "");}},
                                      lineSmooth: Chartist.Interpolation.simple({divisor: 2})};
 	var responsiveOptions 	  = [["screen and (max-width: 320px)",{axisX: {labelInterpolationFnc: function(value) {return value[1];}}}]];
@@ -890,9 +893,8 @@ function loadConnectPage() {
 		coinType = value.coin.type.toLowerCase();
 		algorithm = value.coin.algorithm;
 			connectPoolConfig += "<tr><td>Crypto Coin Name</td><td>" + coinName + " (" + value.coin.type + ") </td></tr>";
+			
 			connectPoolConfig += "<tr><td>Coin Reward Type</td><td>" + value.networkStats.rewardType + "</td></tr>";
-			connectPoolConfig += "<tr><td>Coin Algorithm</td><td>" + value.coin.algorithm + "</td></tr>";
-
 			connectPoolConfig += '<tr><td>Pool Wallet</td><td><a href="' + value.addressInfoLink + '" target="_blank">' + value.address.substring(0, 12) + " &hellip; " + value.address.substring(value.address.length - 12) + "</a></td></tr>";
 			connectPoolConfig += "<tr><td>Payout Scheme</td><td>" + value.paymentProcessing.payoutScheme + "</td></tr>";
 			connectPoolConfig += "<tr><td>Minimum Payment</td><td>" + value.paymentProcessing.minimumPayment + " " + value.coin.type + "</td></tr>";
