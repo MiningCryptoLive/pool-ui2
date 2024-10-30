@@ -4,9 +4,9 @@
   * Copyright 2021 Authors AlphaX Projects
 */
 
-var WebURL         = "https://xmr.solopool.pro/";
-var API            = "https://xmr.solopool.pro/api/";
-var stratumAddress = "stratum+tcp://xmr.solopool.pro";
+var WebURL         = "https://solopool.pro/";
+var API            = "https://solopool.pro/api/";
+var stratumAddress = "stratum+tcp://solopool.pro";
 
 currentPage = "stats";
 
